@@ -10,9 +10,6 @@ BLOGS.forEach(blog => {
     app.use(`/${blog}`, createProxyMiddleware({
         target: `https://www.blog.withallo.com/${blog}/`,
         changeOrigin: true,
-        pathRewrite: {
-          '^/blog': '', // Remove '/blog' prefix from the forwarded request
-        },
       }));
 })
   
